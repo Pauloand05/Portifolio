@@ -23,12 +23,12 @@
         </ul>
     </nav>
 
-    <div class="loanding">
-        <h1>Loanding...</h1>
-    </div>
-
-    <div>
+    <div class="container-loanding">
+        <h1 class="loanding">Loanding...</h1>
         <div class="progress"></div>
+        <div class="progress-bar"></div>
+        <h1 class="status">Completed</h1>
+        <div class="percentage"></div>
     </div>
 
     <script>
@@ -38,11 +38,31 @@
         pages.forEach(page => {
             page.addEventListener('click' , function(event) {
                 event.preventDefault()
-                const progess = document.querySelector('.progress')
-                progress.style.display = 'block'
-                setTimeout(() => {
-                    window.location.href = page.href    
-                }, 3000);
+                const containerLoanding = document.querySelector('.container-loanding')
+                const progressBar = document.querySelector('.progress-bar')
+                const status = document.querySelector('.status')
+                const percentage = document.querySelector('.percentage')
+                containerLoanding.style.display = 'grid'
+                // window.location.href = page.href 
+
+                let width = 0
+                let interval = setInterval(() => {
+                    if(width >= 99.5) {
+                        clearInterval(interval)
+                        percentage.style.display = 'none'
+                        status.style.display = 'block'
+
+                        setTimeout(() => {
+                            window.location.href = page.href    
+                        }, 500);
+                    } else {
+                        width += 10
+                        progressBar.style.width = width + '%'
+                        percentage.style.display = 'block'
+                        percentage.innerHTML = width + '%'
+                    }
+                    
+                }, 100);
             })
         })
     </script>
