@@ -28,9 +28,7 @@
     </div>
 
     <div>
-        <div class="progress">
-            <div class="percentage"></div>
-        </div>
+        <div class="progress"></div>
     </div>
 
     <script>
@@ -40,8 +38,8 @@
         pages.forEach(page => {
             page.addEventListener('click' , function(event) {
                 event.preventDefault()
-                const loanding = document.querySelector('.progress')
-                loanding.style.display = 'block'
+                const progess = document.querySelector('.progress')
+                progress.style.display = 'block'
                 setTimeout(() => {
                     window.location.href = page.href    
                 }, 3000);
