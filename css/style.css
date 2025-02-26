@@ -100,12 +100,84 @@ body {
     width: 100%;
 } 
 
+.container-profile {
+    display: flex;
+    height: 250px;
+    width: 60%;
+    margin: 20px;
+    border: 2px solid #fff;
+}
+
+.container-profile img {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    margin: 30px 20px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    border-radius: 50%;
+}
+
+.container-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    justify-content: center;
+}
+
+.container-presentation  h1 {
+    padding: 5px;
+    height: 20%;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid #fff;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.container-presentation  p {
+    text-align: justify;
+    font-size: 1em;
+    padding: 5px;
+    height: 60%;
+    color: #fff;
+}
+
 .container a:hover {
     color: #39ff14; /* Cor neon  */
     text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
 }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
 
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 @media(max-width: 576px) {
     body {
