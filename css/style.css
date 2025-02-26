@@ -41,7 +41,7 @@ body {
 }
 
 .container-loanding {
-    display: none;
+    display: grid;
     grid-template-columns: minmax(200px, 900px);
     align-items: center;
     justify-content: center;
@@ -127,14 +127,13 @@ body {
     justify-content: center;
 }
 
-.container-presentation  h1 {
+.container-presentation h1 {
+    width: 50%;
     padding: 5px;
     height: 20%;
     color: #fff;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 0.15em solid #fff;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
 .container-presentation  p {
@@ -148,24 +147,6 @@ body {
 .container a:hover {
     color: #39ff14; /* Cor neon  */
     text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #fff;
-    }
 }
 
 @keyframes fadeIn {
