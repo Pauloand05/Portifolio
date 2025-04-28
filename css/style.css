@@ -1,31 +1,80 @@
+/* Reset básico */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'VT323',serif;
+    font-family: 'VT323', serif;
 }
 
 body {
-    background: linear-gradient(to right, #0d1b2a, #3f1c6c);
+    background-image: url(../assets/img/layered-steps-haikei.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh;
+    color: #fff;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    grid-template-columns: minmax(1984, 200);
+/* Navbar estilizada */
+.navbar {
     width: 100%;
-}
-
-.container ul {
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #00ffea;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Perfil (conteúdo principal) */
+.container-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 150px 20px 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container-profile h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #00ffea;
+    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+}
+
+.container-profile p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.5); /* Caixa de texto translúcida */
     padding: 20px;
-    width: 100%;
-    justify-content: space-around;
-    background-color: #111;
+    border-radius: 15px;
 }
 
 .pages li {
@@ -41,7 +90,7 @@ body {
 }
 
 .container-loanding {
-    display: grid;
+    display: none;
     grid-template-columns: minmax(200px, 900px);
     align-items: center;
     justify-content: center;
@@ -100,24 +149,6 @@ body {
     width: 100%;
 } 
 
-.container-profile {
-    display: flex;
-    height: 250px;
-    width: 60%;
-    margin: 20px;
-    border: 2px solid #fff;
-}
-
-.container-profile img {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    margin: 30px 20px;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
-    border-radius: 50%;
-}
-
 .container-presentation {
     display: flex;
     flex-direction: column;
@@ -161,9 +192,6 @@ body {
 }
 
 @media(max-width: 576px) {
-    body {
-        background: #0d1b2a;
-    }
     .container-loanding {
         left: 70%;
         width: 300px;
